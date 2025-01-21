@@ -21,13 +21,20 @@
 </head>
 <body class="animated-bg bg-gray-900">
 
-    <h1 class="text-5xl font-extrabold text-center text-white mt-10 tracking-widest uppercase">Virtual Tour</h1>
+    <div class="flex justify-between items-center p-6">
+        <img src="logo.jpeg" alt="College Logo 1" class="h-20 w-20">
+        <h1 class="text-5xl font-extrabold text-white tracking-widest uppercase">Virtual Tour</h1>
+        <img src="logo2.jpeg" alt="College Logo 2" class="h-20 w-20">
+    </div>
+
+    <div class="text-center mt-6">
+        <h1 class="text-3xl font-extrabold text-white tracking-widest uppercase" >SANJIVANI COLLEGE OF ENGINEERING, KOPARGAON</h1>
+    </div>
+
+    <h2 id="collegeName" class="text-4xl font-bold text-center text-white mt-4"></h2>
 
     <div class="flex flex-wrap justify-center gap-6 p-10">
         <!-- 34 Images -->
-        <!-- Image loop -->
-        <!-- Start from 1.jpeg to 34.jpeg -->
-        
         <script>
             for (let i = 1; i <= 34; i++) {
                 document.write(` 
@@ -43,6 +50,11 @@
     </div>
 
     <script>
+        function updateCollegeName() {
+            const collegeName = document.getElementById('collegeNameInput').value;
+            document.getElementById('collegeName').textContent = collegeName;
+        }
+
         document.querySelectorAll('img').forEach(img => {
             img.addEventListener('click', function() {
                 const modal = document.createElement('div');
